@@ -16,7 +16,7 @@ function addListener(el) {
       el.parentNode.classList.remove('active');
     } else {
       closeAllTabs(el);
-      el.parentNode.classList.toggle('active');
+      el.parentNode.classList.add('active');
     }
   });
 }
