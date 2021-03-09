@@ -1,7 +1,140 @@
-.attribution {
-  font-size: 11px;
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  color: #292943;
+  font-size: 15px;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 920px;
+  height: 82%;
+  padding: 70px;
+  background-color: #fff;
+  margin-top: 40px;
+}
+
+.faq-holder {
+  padding-left: 16px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.faq {
+  position: relative;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  padding: 20px 0;
+}
+
+.question:hover {
+  color: hsl(14, 88%, 65%);
+  cursor: pointer;
+}
+
+.faq.active .question {
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.answer {
+  height: 0;
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: top;
+  font-size: 14px;
+  color: hsl(240, 6%, 50%);
+  padding-right: 30px;
+  transition: height 0.01s, transform 0.3s, opacity 0.5s;
+}
+
+.faq.active .answer {
+  height: 100%;
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  right: 30px;
+  top: 12px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.faq.active button {
+  transform: rotateX(180deg);
+}
+
+/* footer */
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  font-size: 13px;
+  text-align: center;
+  color: hsl(227, 100%, 95%);
+}
+
+.attribution p {
+  display: inline-block;
+}
+
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--dark);
+  padding: 5px 12px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+
+.attribution a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 27px;
+  top: -4px;
+  left: 0;
+  transform: skew(-20deg);
+  background: #fff;
+  z-index: -1;
+  transition: all 0.3s;
+}
+
+.attribution a:hover::before {
+  transform: skew(0deg);
+  border: 1px solid #fff;
+  background: transparent;
+}
+
+.attribution a:hover {
+  color: #fff;
+}
+
+.attribution a:active::before {
+  background: #fff;
+}
+
+.attribution a:active {
+  color: var(--dark);
 }

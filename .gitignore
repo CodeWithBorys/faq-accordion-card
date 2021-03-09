@@ -15,3 +15,6 @@
 .DS_Store
 
 .prettierignore
+.gitignore
+.vscode
+style-guide.md
