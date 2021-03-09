@@ -21,7 +21,7 @@ body {
 .faq-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 920px;
+  max-width: 920px;
   height: 82%;
   background-color: #fff;
   margin-top: 40px;
@@ -40,9 +40,8 @@ body {
 }
 
 .img-bg {
-  top: 20%;
-  left: -30%;
-  width: 100%;
+  bottom: -35%;
+  left: -125%;
 }
 
 .img-woman {
@@ -54,9 +53,12 @@ body {
   top: 40%;
   left: -20%;
 }
+
+.img-holder .mobile {
+  display: none;
+}
 /* ========== Section with questions ========== */
 .faq-holder {
-  padding-left: 16px;
   padding: 70px 96px 0 15px;
 }
 
@@ -114,7 +116,7 @@ button {
   transform: rotateX(180deg);
 }
 
-/* footer */
+/* ========== footer ========== */
 .attribution {
   position: absolute;
   bottom: 10px;
@@ -165,4 +167,120 @@ button {
 
 .attribution a:active {
   color: hsl(240, 73%, 65%);
+}
+
+/* ========== media queries ========== */
+
+@media (max-width: 935px) {
+  body {
+    padding: 0 20px;
+  }
+  .faq-holder {
+    padding-right: 25px;
+  }
+}
+
+@media (min-width: 781px) and (max-width: 875px) {
+  .faq-container {
+    grid-template-columns: 1fr 1.5fr;
+  }
+
+  .img-holder img {
+    transform: scale(0.75);
+  }
+
+  .img-bg {
+    top: -50%;
+    left: -180%;
+  }
+
+  .img-woman {
+    top: 15%;
+    left: -35%;
+  }
+
+  .img-box {
+    top: 40%;
+    left: -28%;
+  }
+}
+
+@media (max-width: 780px) {
+  body {
+    padding: 0 50px;
+  }
+
+  .faq-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr;
+    height: 85%;
+  }
+
+  .img-holder .desktop {
+    display: none;
+  }
+
+  .img-holder .mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .img-bg.mobile {
+    top: 20%;
+    left: 52%;
+  }
+
+  .faq-holder {
+    padding: 70px 50px 0;
+  }
+}
+
+@media (max-width: 515px) {
+  body {
+    padding: 0 15px;
+    font-size: 0.9rem;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  .faq-holder {
+    padding: 70px 25px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .img-holder .mobile {
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  .faq-container {
+    height: 82%;
+  }
+
+  .faq-holder {
+    padding: 90px 10px 0;
+  }
+
+  .faq {
+    padding: 15px 0;
+  }
+
+  .answer {
+    font-size: 13px;
+  }
+
+  button {
+    top: 6px;
+  }
+
+  .attribution {
+    bottom: 3px;
+  }
+  .attribution a::before {
+    height: 22px;
+    top: 1px;
+  }
 }
